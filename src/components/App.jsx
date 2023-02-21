@@ -40,16 +40,9 @@ export function App() {
     setFilterName(event.target.value)
   }
 
-  const deleteContact = (event) => {
-    const contactToDel = event.currentTarget.name;
-    const newContactsList = contacts.filter(contact => {
-      if (contact.name === contactToDel) {
-        return false
-      } else {
-        return contact
-      }
-    })
-    setContacts(newContactsList)
+  const deleteContact = (id) => {
+  
+    setContacts(prev =>prev.filter(contact =>  contact.name === id) )
   }
 
   return (
