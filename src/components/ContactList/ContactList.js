@@ -13,7 +13,7 @@ export const ContactList = ({ list, deleteContact, filterName }) => {
                 return <li key={item.id} className='contact-item'>
                     <span>{item.name}:</span>
                     <span className='number'>{item.number}</span>
-                        <button type="button" className='deleteBtn' name={item.name} onClick={deleteContact}>Delete contact</button>
+                        <button type="button" className='deleteBtn' name={item.name} onClick={()=>{deleteContact(item.id)}}>Delete contact</button>
                     </li>
             })}
         </ul>
