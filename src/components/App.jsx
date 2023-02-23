@@ -40,6 +40,10 @@ export function App() {
     setFilterName(event.target.value)
   }
 
+  const findedContacts = contacts.filter((element) => {
+        return element.name.toLowerCase().includes(filterName.toLowerCase())
+    })
+
   const deleteContact = (id) => {
     setContacts(prev=>prev.filter(contact => contact.id !== id))
   }
@@ -60,7 +64,7 @@ export function App() {
       <ContactForm addContact={addContact} />
       <h2 className="title">Contacts</h2>
       <Filter findContacts={filterContacts} />
-      <ContactList list={contacts} deleteContact={deleteContact} filterName={filterName} />
+      <ContactList list={contacts} deleteContact={deleteContact} filteredContacts={findedContacts} />
     </div>
   )
 }
