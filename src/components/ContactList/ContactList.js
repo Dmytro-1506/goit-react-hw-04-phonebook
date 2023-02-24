@@ -1,9 +1,9 @@
 import './ContactList.css'
 
-export const ContactList = ({ list, deleteContact, filteredContacts }) => {
+export const ContactList = ({ deleteContact, filteredContacts }) => {
     return <div className='contacts'>
         <ul className="contact-list">
-            {(filteredContacts || list).map(item => {
+            {filteredContacts.map(item => {
                 return <li key={item.id} className='contact-item'>
                     <span>{item.name}:</span>
                     <span className='number'>{item.number}</span>

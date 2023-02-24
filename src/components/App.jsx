@@ -64,7 +64,7 @@ export function App() {
       <ContactForm addContact={addContact} />
       <h2 className="title">Contacts</h2>
       <Filter findContacts={filterContacts} />
-      <ContactList list={contacts} deleteContact={deleteContact} filteredContacts={findedContacts} />
+      <ContactList deleteContact={deleteContact} filteredContacts={findedContacts} />
     </div>
   )
 }
